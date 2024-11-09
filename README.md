@@ -10,4 +10,3 @@
 
 ### PERINTAH UPDATE 
 <pre><code>wget https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/Fls/update && chmod +x update && ./update</code></pre>
-```
