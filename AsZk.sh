@@ -319,7 +319,7 @@ usermod -aG sudo $Username > /dev/null 2>&1
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
-<b> 🟢 NOTIFICATIONS INSTALL 🟢</b>
+<b>❇️ NOTIFICATIONS INSTALL ❇️</b>
 <code>────────────────────</code>
 <code>ID     : </code><code>$USRSC</code>
 <code>Domain : </code><code>$domain</code>
