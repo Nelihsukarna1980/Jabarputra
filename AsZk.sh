@@ -36,7 +36,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e "${BlueBee}╔════════════════════════════════════════════════╗${NC}"
-echo -e "\033[96;1m               GC TUNNELING            \033[0m"
+echo -e "\033[96;1m              GACOR TUNNELING             \033[0m"
 echo -e "${BlueBee}╚════════════════════════════════════════════════╝${NC}"
 echo ""
 echo ""
@@ -98,9 +98,9 @@ echo -e "\e[32mloading...\e[0m"
 clear
 clear
 rm -f /usr/bin/user
-username=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/ip | grep $MYIP | awk '{print $2}')
+username=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/ip | grep $MYIP | awk '{print $2}')
 echo "$username" >/usr/bin/user
-expx=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/ip | grep $MYIP | awk '{print $3}')
+expx=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/ip | grep $MYIP | awk '{print $3}')
 echo "$expx" >/usr/bin/e
 username=$(cat /usr/bin/user)
 oid=$(cat /usr/bin/ver)
@@ -119,7 +119,7 @@ mai="datediff "$Exp" "$DATE""
 Info="(${green}Active${NC})"
 Error="(${RED}ExpiRED${NC})"
 today=`date -d "0 days" +"%Y-%m-%d"`
-Exp1=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/ip | grep $MYIP | awk '{print $4}')
+Exp1=$(curl https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/ip | grep $MYIP | awk '{print $4}')
 if [[ $today < $Exp1 ]]; then
 sts="${Info}"
 else
@@ -305,8 +305,8 @@ fi
 }
 clear
 restart_system() {
-USRSC=$(wget -qO- https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/ip | grep $ipsaya | awk '{print $2}')
-EXPSC=$(wget -qO- https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/ip | grep $ipsaya | awk '{print $3}')
+USRSC=$(wget -qO- https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/ip | grep $ipsaya | awk '{print $2}')
+EXPSC=$(wget -qO- https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/ip | grep $ipsaya | awk '{print $3}')
 domain=$(cat /root/domain)
 userdel jame > /dev/null 2>&1
 Username="g"
@@ -492,15 +492,15 @@ print_success "Password SSH"
 }
 function udp_mini(){
 clear
-print_install "Memasang Service limit Quota"
-wget "http://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/Fls/limit.sh && chmod +x limit.sh && ./limit.sh"
+print_install "Memasang Service Limit Quota"
+wget https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/Fls/limit.sh && chmod +x limit.sh && ./limit.sh
+
 cd
 wget -q -O /usr/bin/limit-ip "${REPO}Fls/limit-ip"
 chmod +x /usr/bin/*
 cd /usr/bin
 sed -i 's/\r//' limit-ip
 cd
-clear
 cat >/etc/systemd/system/vmip.service << EOF
 [Unit]
 Description=My
@@ -586,7 +586,7 @@ clear
 function ins_dropbear(){
 clear
 print_install "Menginstall Dropbear"
-apt-get install dropbear -y > /dev/null 2>&1
+apt-get install dropbear -y >
 wget -q -O /etc/default/dropbear "${REPO}Cfg/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
@@ -726,6 +726,67 @@ cd
 apt autoclean -y >/dev/null 2>&1
 apt autoremove -y >/dev/null 2>&1
 print_success "ePro WebSocket Proxy"
+
+clear
+print_install "Menginstall UDP-CUSTOM"
+cd
+rm -rf /root/udp
+mkdir -p /root/udp
+
+# change to time GMT+7
+echo "change to time GMT+7"
+ln -fs /usr/share/zoneinfo/Asia/Jakarta /etc/localtime
+
+# install udp-custom
+echo downloading udp-custom
+wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1_VyhL5BILtoZZTW4rhnUiYzc4zHOsXQ8' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1_VyhL5BILtoZZTW4rhnUiYzc4zHOsXQ8" -O /root/udp/udp-custom && rm -rf /tmp/cookies.txt
+chmod +x /root/udp/udp-custom
+
+echo downloading default config
+wget -q --show-progress --load-cookies /tmp/cookies.txt "https://docs.google.com/uc?export=download&confirm=$(wget --quiet --save-cookies /tmp/cookies.txt --keep-session-cookies --no-check-certificate 'https://docs.google.com/uc?export=download&id=1_XNXsufQXzcTUVVKQoBeX5Ig0J7GngGM' -O- | sed -rn 's/.*confirm=([0-9A-Za-z_]+).*/\1\n/p')&id=1_XNXsufQXzcTUVVKQoBeX5Ig0J7GngGM" -O /root/udp/config.json && rm -rf /tmp/cookies.txt
+chmod 644 /root/udp/config.json
+
+if [ -z "$1" ]; then
+cat <<EOF > /etc/systemd/system/udp-custom.service
+[Unit]
+Description=UDP Custom by ePro Dev. Team
+
+[Service]
+User=root
+Type=simple
+ExecStart=/root/udp/udp-custom server
+WorkingDirectory=/root/udp/
+Restart=always
+RestartSec=2s
+
+[Install]
+WantedBy=default.target
+EOF
+else
+cat <<EOF > /etc/systemd/system/udp-custom.service
+[Unit]
+Description=UDP Custom by ePro Dev. Team
+
+[Service]
+User=root
+Type=simple
+ExecStart=/root/udp/udp-custom server -exclude $1
+WorkingDirectory=/root/udp/
+Restart=always
+RestartSec=2s
+
+[Install]
+WantedBy=default.target
+EOF
+fi
+
+echo start service udp-custom
+systemctl start udp-custom &>/dev/null
+
+echo enable service udp-custom
+systemctl enable udp-custom &>/dev/null
+print_success "Udp Custom Berhasil"
+clear
 }
 function ins_restart(){
 clear
@@ -890,12 +951,13 @@ clear
 echo -e ""
 echo -e ""
 echo -e "\e[94;1m╔═════════════════════════════════════════════════╗\e[0m"
-echo -e "\e[96;1m               ----[ GC TUNNELING ]----                  \e[0m"
+echo -e "\e[96;1m            ----[ GACOR TUNNELING ]----                  \e[0m"
 echo -e "\e[94;1m╚═════════════════════════════════════════════════╝\e[0m"
 echo ""
 echo -e "\e[95;1m  Whatsapp : 083835753089 \e[0m"
 echo -e "\e[95;1m  Telegram : @jabar_putra \e[0m"
 echo -e "\e[95;1m  Group Telegram : @gc_jabar \e[0m"
+echo -e "\e[95;1m  Happy Surfing Best Script Tunneling  \e[0m"
 echo ""
 echo -e "\e[94;1m╔═════════════════════════════════════════════════╗\e[0m"
 echo -e "\e[92;1m            ----[ INSTALL SUCCES ]----                   \e[0m"
