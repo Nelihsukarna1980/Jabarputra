@@ -493,7 +493,7 @@ print_success "Password SSH"
 function udp_mini(){
 clear
 print_install "Memasang Service Limit Quota"
-wget https://raw.githubusercontent.com/Nelihsukarna1980/izinkan/main/Fls/limit.sh && chmod +x limit.sh && ./limit.sh
+wget https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/Fls/limit.sh && chmod +x limit.sh && ./limit.sh
 
 cd
 wget -q -O /usr/bin/limit-ip "${REPO}Fls/limit-ip"
@@ -586,7 +586,7 @@ clear
 function ins_dropbear(){
 clear
 print_install "Menginstall Dropbear"
-apt-get install dropbear -y >/dev/null 2>&1
+apt-get install dropbear -y >
 wget -q -O /etc/default/dropbear "${REPO}Cfg/dropbear.conf"
 chmod +x /etc/default/dropbear
 /etc/init.d/dropbear restart
