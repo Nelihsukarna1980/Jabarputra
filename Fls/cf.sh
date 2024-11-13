@@ -6,9 +6,9 @@ echo -e ""
 echo -e "\033[96;1m============================\033[0m"
 echo -e "\033[93;1m      INPUT SUBDOMAIN"
 echo -e "\033[96;1m============================\033[0m"
-echo -e "\033[91;1m Note. contoh Subdomain :\033[0m \033[93mbodoh22 \033[0m"
+echo -e "\033[91;1m Note. contoh Subdomain :\033[0m \033[93m gacor123 \033[0m"
 echo -e " "
-read -p "SUBDOMAIN :  " domen
+read -p "SUBDOMAIN : " domen
 echo -e ""
 DOMAIN=jabarssh.shop
 sub=${domen}
