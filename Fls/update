@@ -56,15 +56,15 @@ res1() {
 }
 netfilter-persistent
 clear
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
-echo -e "\e[1;97;101m             UPDATE SCRIPT              \e[0m"
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\e[97;1;44;1m             UPDATE SCRIPT              \e[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e "\033[1;92m update script service\033[1;37m"
+echo -e "\033[92;1m update script service\033[1;37m"
 fun_bar 'res1'
-echo -e "\033[1;36m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
+echo -e "\033[0;34m━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━\033[0m"
 echo -e ""
-echo -e "\033[1;36mWait in 3 second...\033[0m"
+echo -e "\033[92;1m Wait in 3 second...\033[0m"
 sleep 3
 #read -n 1 -s -r -p "Press [ Enter ] to back on menu"
 welcome
