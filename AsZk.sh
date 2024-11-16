@@ -823,8 +823,6 @@ function menu(){
 clear
 print_install "Memasang Menu Packet"
 wget ${REPO}Cdy/menu.zip
-wget -q -O /usr/bin/enc "https://raw.githubusercontent.com/Nelihsukarna1980/Jabarputra/main/Enc/encrypt" ; chmod +x /usr/bin/enc
-7z x -sukarna80 menu.zip
 unzip menu.zip
 chmod +x menu/*
 mv menu/* /usr/local/sbin
