@@ -226,7 +226,7 @@ fi
 # // Get // No delete
 TIMES="10"
 CHATID="5630368779"
-KEY="7282932083:AAGbpseGvQI0ylaeFmpbylnU-jQ73nolU_4"
+KEY="7705019146:AAEKWVYU7nOujZJWjz99XxlFXo8yCZj4stE"
 URL="https://api.telegram.org/bot$KEY/sendMessage"
 
 # // install paket
@@ -282,7 +282,7 @@ echo -e "\e[96;1m╔════════════════════
 echo -e "\e[1;32m                 INPUT YOUR DOMAIN $NC"
 echo -e "\e[96;1m╚═════════════════════════════════════════════════╝ $NC"
 echo -e ""
-echo -e "\e[91;1m WARNING !! \e[0m"
+echo -e "\e[1;31m WARNING !! \e[0m"
 echo -e "\e[92;1m  # \e[1;32m Pastikan Domain anda sudah di pointing \e[0m"
 echo -e "\e[92;1m  # \e[1;32m Pastikan ipvps ter pointing ke domain \e[0m"
 echo -e ""
@@ -319,7 +319,7 @@ usermod -aG sudo $Username > /dev/null 2>&1
 TIMEZONE=$(printf '%(%H:%M:%S)T')
 TEXT="
 <code>────────────────────</code>
-<b>❇️ NOTIFICATIONS INSTALL ❇️</b>
+<b>⭕ NOTIFICATIONS INSTALL ⭕</b>
 <code>────────────────────</code>
 <code>ID     : </code><code>$USRSC</code>
 <code>Domain : </code><code>$domain</code>
