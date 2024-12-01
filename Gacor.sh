@@ -36,7 +36,7 @@ clear
 clear && clear && clear
 clear;clear;clear
 echo -e "${BlueBee}╔════════════════════════════════════════════════╗${NC}"
-echo -e "\033[92;1m               GACOR TUNNELING PREMIUM AUTO SCRIPT            \033[0m"
+echo -e "\033[92;1m           GACOR TUNNELING PREMIUM AUTO SCRIPT            \033[0m"
 echo -e "${BlueBee}╚════════════════════════════════════════════════╝${NC}"
 echo ""
 clear
@@ -675,7 +675,7 @@ apt autoremove -y >/dev/null 2>&1
 print_success "ePro WebSocket Proxy"
 
 clear
-print_install "Install UDP-CUSTOM"
+print_install "UDP-CUSTOM"
 cd
 rm -rf /root/udp
 mkdir -p /root/udp
@@ -768,7 +768,7 @@ print_success "All Packet"
 }
 function menu(){
 clear
-print_install "Install Menu Packet"
+print_install "Menu Paket Script"
 wget ${REPO}Cdy/menu.zip
 unzip menu.zip
 chmod +x menu/*
@@ -903,7 +903,7 @@ echo ""
 echo -e "\e[92;1m            ----[ INSTALL SUCCES ]----                   \e[0m"
 echo -e ""
 echo -e "\e[94;1m╔═════════════════════════════════════════════════╗\e[0m"
-echo -e "\e[92;1m               GACOR TUNNELING BY JABAR PUTRA                      \e[0m"
+echo -e "\e[92;1m            GACOR TUNNELING BY JABAR PUTRA                      \e[0m"
 echo -e "\e[94;1m╚═════════════════════════════════════════════════╝\e[0m"
 echo -e ""
 read -p "[ Enter ]  TO REBOOT"
