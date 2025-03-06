@@ -12,7 +12,7 @@ PASS = ''
 BUFLEN = 4096 * 4
 TIMEOUT = 60
 DEFAULT_HOST = '127.0.0.1:111'
-RESPONSE = 'HTTP/1.1 101 <b><i><font color="yellow">Gacor Tunneling</font></b> Gacor Tunneling\r\nUpgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: foo\r\n\r\n'
+RESPONSE = 'HTTP/1.1 101 <b> Gacor Tunneling \r\n Upgrade: websocket\r\nConnection: Upgrade\r\nSec-WebSocket-Accept: foo\r\n\r\n'
 
 SOCKS_VERSION = 5
 
